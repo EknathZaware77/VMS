@@ -1,0 +1,84 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Products Gallery Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        table {
+            border:solid 2px ;
+
+        }
+         th{
+            color:red ;
+            margin:10px;
+            border:solid 1px;
+            background-color:green;
+       
+            
+        }
+       td {
+            color:black;
+            margin:10px;
+            border: solid 1px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>AllVisitor</h1>
+    <hr />
+    <div class="text-center">
+        @{
+            List<Visitor> inVisitor = (List<Visitor>)ViewData["allvisitor"];
+            int count = 0;
+            <table class="tables">
+                <tr >
+                     <th>Count</th>
+                     <th>ID</th>
+                    <th>AdharNO</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Delete</th>
+                    <th>update</th>
+                    
+                </tr>
+
+                @foreach (Visitor visit in inVisitor)
+                {      
+                    int count2 = count + 1;
+                    count++;
+                    <tr>
+                       <td>@count2</td>
+                       <td>@visit.Id</td>
+                        <td>@visit.AdharNo</td>
+                        <td>@visit.FirstName</td>
+                        <td>@visit.LastName</td>
+                        <td>
+                          <li href="delete/{id}">Delete</li>
+                          </td>
+                    </tr>
+
+
+
+
+                }
+            </table>
+        }
+        <hr />
+    </div>
+</body>
+</html>

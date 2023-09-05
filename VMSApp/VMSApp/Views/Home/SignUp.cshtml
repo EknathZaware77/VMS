@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/SignUp.css" />
+    <title>Document</title>
+    <style>
+        .input_box {
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 40px;
+        }
+
+            .input_box input {
+                height: 100%;
+                width: 100%;
+                border: 1.5px solid black;
+                outline: none;
+                padding: 0 30px;
+                color: #333;
+                transition: all 0.2s ease;
+                border-bottom: 1.5px solid #aaaaaa;
+            }
+
+            .input_box select {
+                height: 100%;
+                width: 100%;
+                border: 1.5px solid black;
+                outline: none;
+                padding: 0 30px;
+                color: #333;
+                transition: all 0.2s ease;
+                border-bottom: 1.5px solid #aaaaaa;
+            }
+
+            .input_box input:focus {
+                border-color: #7d2ae8;
+            }
+
+        .signup_form {
+            border: 1px solid #aaaaaa;
+            margin: 20px
+        }
+
+       .container{
+           border:1.5px solid black
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class=""> 
+        <h1>SignUp</h1>
+        <div class="">
+    <form action="/Signup" method="POST">
+        <div class="input_box">
+            <label for="empno">employno:</label>
+            <input type="text" id="empno" name="empno" required>
+        </div>
+
+        <div class="input_box">
+            <label for="firstname">Firstname:</label>
+            <input type="text" id="firstname" name="firstname" required>
+        </div>
+
+        <div class="input_box">
+            <label for="lastname">Lastname:</label>
+            <input type="text" id="lastname" name="lastname" required>
+        </div>
+        <div class="input_box">
+            <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="sequerity">SqurityGard</option>
+                    <option value="superadmin">SuperAdmin</option>
+                    <option value="admin">Admin</option>
+                </select>
+        </div>
+        <div class="input_box">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input_box">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <div class="input_box"> <input type="submit" value="Sign Up"  style="background-color:green;color:black" ></div>
+        <div>
+         </div>
+    </form>
+    <a asp-controller="Home" asp-action="login">login</a>
+         
+    </div>
+    </div>
+
+</body>
+</html>
+ 

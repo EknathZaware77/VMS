@@ -1,0 +1,123 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .input_box {
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 40px;
+    }
+
+        .input_box input {
+            height: 100%;
+            width: 100%;
+            border: 1.5px solid black;
+            outline: none;
+            padding: 0 30px;
+            color: #333;
+            transition: all 0.2s ease;
+            border-bottom: 1.5px solid #aaaaaa;
+        }
+
+        .input_box select {
+            height: 100%;
+            width: 100%;
+            border: 1.5px solid black;
+            outline: none;
+            padding: 0 30px;
+            color: #333;
+            transition: all 0.2s ease;
+            border-bottom: 1.5px solid #aaaaaa;
+        }
+
+        .input_box input:focus {
+            border-color: #7d2ae8;
+        }
+
+    .signup_form {
+        border: 1px solid #aaaaaa;
+        margin: 20px
+    }
+
+    .container {
+        border: 1.5px solid black
+    }
+</style>
+<body>
+      
+    <div  class=""> 
+        <h1>SignUp</h1>
+        <div class="">
+            <form  method="post">
+        <div class="input_box">
+           <label for="adharno">Adharno:</label>
+          <input type="text" id="adharno" name="adharno" required>
+        </div>
+
+        <div class="input_box">
+            <label for="firstname">Firstname:</label>
+            <input type="text" id="firstname" name="firstname" required>
+        </div>
+
+        <div class="input_box">
+            <label for="lastname">Lastname:</label>
+            <input type="text" id="lastname" name="lastname" required>
+        </div>
+                <div class="input_box">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input_box">
+                    <label for="admin">Admin:</label>
+                    <input type="text" id="admin" name="admin" required>
+                </div>
+                <div class="input_box">
+                    <label for="noofvisitor">noof visitor:</label>
+                    <input type="number" id="noofvisitor" name="noofvisitor" required>
+                </div>
+                <div class="input_box">
+                    <label for="reason">Reason:</label>
+
+                    <textarea for="reason" id="reason" name="reason"></textarea>
+                </div>
+
+                <div class="input_box">
+                    <label for="vdate">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="input_box">
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div >
+              
+
+
+                <div class="input_box"> <input type="submit" value="Sign Up"  style="background-color:green;color:black" ></div>
+        <div>
+         </div>
+    </form>
+            <li >
+                <a class="nav-item" asp-area="" asp-controller="Sequerity" asp-action="Index">Sequerity Page</a>
+            </li>
+            <li>
+                <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Index">Log Out</a>
+            </li>
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>

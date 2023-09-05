@@ -1,0 +1,38 @@
+﻿.input_box {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+    .input_box input {
+        height: 100%;
+        width: 100%;
+        border: 1.5px solid black;
+        outline: none;
+        padding: 0 30px;
+        color: #333;
+        transition: all 0.2s ease;
+        border-bottom: 1.5px solid #aaaaaa;
+    }
+
+    .input_box select {
+        height: 100%;
+        width: 100%;
+        border: 1.5px solid black;
+        outline: none;
+        padding: 0 30px;
+        color: #333;
+        transition: all 0.2s ease;
+        border-bottom: 1.5px solid #aaaaaa;
+    }
+
+    .input_box input:focus {
+        border-color: #7d2ae8;
+    }
+
+.signup_form {
+    border: 1px solid #aaaaaa;
+    margin: 20px
+}
