@@ -25,13 +25,13 @@ namespace VMSApp.Models
                 {
                     int id = int.Parse(reader["id"].ToString());
                     string name = reader["firstname"].ToString();
-                   
+
 
                     Visitor dept = new Visitor
                     {
                         Id = id,
                         FirstName = name,
-                       
+
                     };
                     allDepartments.Add(dept);
                 }

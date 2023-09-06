@@ -8,7 +8,7 @@ namespace VMSApp.Controllers
     public class SequerityController : Controller
     {
         // GET: Sequerity
-    
+
 
         private readonly ILogger<SequerityController> _logger;
 
@@ -58,15 +58,15 @@ namespace VMSApp.Controllers
 
         public ActionResult Signup(Visitor visitor)
         {
-            SequerityDbManager.Insert(visitor);
-            
+            VisitorDbManager.Insert(visitor);
+
             return View();
         }
 
 
         public ActionResult Created()
         {
-             return Ok(new { message = "Visitor created" });
+            return Ok(new { message = "Visitor created" });
         }
 
         public ActionResult UpdateVisitor()
@@ -76,7 +76,7 @@ namespace VMSApp.Controllers
         public ActionResult InVisitor()
 
         {
-            List<Visitor> allvisitor=SequerityDbManager.GetAllVisitorIn();
+            List<Visitor> allvisitor = VisitorDbManager.GetAllVisitorIn();
             this.ViewData["allvisitor"] = allvisitor;
             return View();
         }

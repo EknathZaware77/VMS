@@ -54,10 +54,10 @@
        <div class="">
             <h1>login</h1>
             <div class="">
-                <form action="." method="POST">
+                <form    method="POST">
                     <div class="input_box">
                         <label for="empno">employno:</label>
-                        <input type="text" id="empno" name="empno" required>
+                        <input type="number" id="empno" name="empno" required>
                     </div>
                     <div class="input_box">
                         <label for="password">Password:</label>
@@ -68,6 +68,9 @@
                     <div>
                     </div>
                 </form>
+            <a asp-controller="Home" asp-action="Signup">Signup</a>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+
             </div>
         </div>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Diagnostics;
 using VMSApp.Models;
 
@@ -29,14 +30,74 @@ namespace VMSApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Signup()
+
+
+        public IActionResult Signup(Employee emp1)
         {
+            List<Employee> allemp = EmpDbManager.GetAllEmp();
+            for(int i = 0; i < allemp.Count; i++)
+            {
+              Employee emp = allemp[i]; 
+                if(emp1.Empno == emp.Empno)
+                {
+                    return RedirectToAction("Login", "Home");
+                }
+               
+            }
+
+            EmpDbManager.SaveNewEmp(emp1);
+
             return View();
+
+
         }
 
-        public IActionResult Login()
+
+
+
+        
+        public IActionResult Login(Employee emp1)
         {
+            
+            int empno = emp1.Empno;
+            string password = emp1.Password;
+
+            List<Employee> allemp = EmpDbManager.GetAllEmp();
+
+            for (int i = 0; i < allemp.Count; i++)
+            {
+                Employee emp = allemp[i];
+                if (emp.Empno == empno && emp.Password.Equals(password))
+                {
+                    ViewData["emp"] = emp;
+                    if (emp.Role.Equals("admin"))
+                    {
+                        return RedirectToAction("Index" , "Admin");
+
+                    }
+                    else
+                    {
+                        if (emp.Role.Equals("superadmin"))
+                        {
+                            return RedirectToAction("Index", "Superadmin");
+                        }
+                        else
+                        {
+                            if (emp.Role.Equals("sequerity"))
+
+                            {
+                                return RedirectToAction("Index", "Sequerity");
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
+
             return View();
+
         }
 
 

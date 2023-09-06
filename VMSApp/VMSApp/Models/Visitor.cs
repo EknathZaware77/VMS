@@ -1,22 +1,22 @@
 ﻿namespace VMSApp.Models
 {
     public class Visitor
-    { 
+    {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
         public String Email { get; set; }
-        public string AdharNo { get; set; }   
+        public string AdharNo { get; set; }
         public string Reason { get; set; }
 
-       
 
-        public string Status {  get; set; }
-        public  DateTime VDate { get; set; } 
+
+        public string Status { get; set; }
+        public DateTime VDate { get; set; }
         public TimeSpan VTime { get; set; }
-        public string Admin {  get; set; }
-        public int  NoOfVisitor {  get; set; }
+        public string Admin { get; set; }
+        public int NoOfVisitor { get; set; }
 
         public Visitor(string firstName, string lastName, string email, string adharNo, string reason, string status, DateTime date, TimeSpan time)
         {
@@ -66,4 +66,4 @@
             NoOfVisitor = noOfVisitor;
         }
     }
-} 
+}

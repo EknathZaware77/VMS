@@ -61,7 +61,7 @@
     <div class=""> 
         <h1>SignUp</h1>
         <div class="">
-    <form action="/Signup" method="POST">
+    <form asp-action="/login" method="POST">
         <div class="input_box">
             <label for="empno">employno:</label>
             <input type="text" id="empno" name="empno" required>
@@ -97,6 +97,7 @@
          </div>
     </form>
     <a asp-controller="Home" asp-action="login">login</a>
+    <a asp-controller="Home" asp-action="Index">Home</a>
          
     </div>
     </div>
